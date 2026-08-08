@@ -223,6 +223,17 @@
     border-radius:50%;background:var(--ink);border:2px solid var(--teal);
   }
   .entry.dim::before{border-color:var(--text-dimmer);}
+  .entry.core{
+    background:linear-gradient(135deg, rgba(79,216,199,0.06), transparent);
+    border-left:2px solid var(--teal);
+    margin-left:-18px;padding-left:16px;padding-top:6px;
+    border-radius:0 8px 8px 0;
+  }
+  .core-badge{
+    display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:700;
+    color:var(--ink);background:var(--teal);padding:2px 7px;border-radius:3px;
+    margin-left:8px;letter-spacing:.04em;vertical-align:middle;
+  }
   .entry-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:6px;}
   .ver-tag{
     font-family:var(--mono);font-size:11.5px;color:var(--ink);
@@ -260,6 +271,37 @@
   .case li{position:relative;padding-left:18px;margin-bottom:7px;color:var(--text-dim);font-size:13.8px;}
   .case li::before{content:'—';position:absolute;left:0;color:var(--text-dimmer);}
   .stack{display:flex;flex-wrap:wrap;gap:6px;}
+  .case-links{display:flex;gap:14px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);}
+  .case-link{
+    font-family:var(--mono);font-size:12px;color:var(--teal);
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  .case-link:hover{text-decoration:underline;}
+
+  /* detailed test case spec */
+  .spec{
+    margin-top:26px;background:var(--panel);border:1px solid var(--line-strong);
+    border-radius:10px;overflow:hidden;
+  }
+  .spec-head{
+    padding:14px 20px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+    background:var(--panel-2);
+  }
+  .spec-head .spec-id{font-family:var(--mono);font-size:12.5px;color:var(--teal);font-weight:700;}
+  .spec-rows{padding:6px 20px 18px;}
+  .spec-row{
+    display:grid;grid-template-columns:150px 1fr;gap:12px;
+    padding:11px 0;border-bottom:1px solid var(--line);
+  }
+  .spec-row:last-child{border-bottom:none;}
+  .spec-label{font-family:var(--mono);font-size:11.5px;color:var(--text-dimmer);text-transform:uppercase;letter-spacing:.04em;padding-top:1px;}
+  .spec-val{font-size:14px;color:var(--text-dim);}
+  .spec-val code{
+    font-family:var(--mono);font-size:12.5px;color:var(--text);
+    background:rgba(231,236,243,0.06);padding:2px 6px;border-radius:4px;
+  }
+  @media (max-width:600px){ .spec-row{grid-template-columns:1fr;gap:4px;} }
 
   /* ---------- CREDENTIALS ---------- */
   .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
@@ -449,12 +491,18 @@
           <span class="entry-role">Project Coordinator (QA/QC Engineer)</span>
         </div>
         <div class="entry-org">Humphs and Shabach Ltd.</div>
+        <ul>
+          <li>Coordinate project quality activities and documentation</li>
+          <li>Support quality assurance and quality control processes</li>
+          <li>Review project deliverables against required standards and specifications</li>
+          <li>Maintain quality records, reports, and inspection documentation</li>
+        </ul>
       </div>
 
-      <div class="entry reveal">
+      <div class="entry core reveal">
         <div class="entry-head">
           <span class="ver-tag">2022 — 2025</span>
-          <span class="entry-role">Engineer II, SWIFT Support (SWIFT Analyst I)</span>
+          <span class="entry-role">Engineer II, SWIFT Support (SWIFT Analyst I)<span class="core-badge">CORE QA ROLE</span></span>
         </div>
         <div class="entry-org">Telnet Nigeria Limited (TELNET Group)</div>
         <p class="entry-desc">Supported software development, testing, API validation, and SWIFT banking operations while collaborating with engineers to improve application quality and reliability.</p>
@@ -511,7 +559,7 @@
 
 <section id="projects">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Test <span class="accent">cases</span></span></div>
+    <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">QA Projects & <span class="accent">test cases</span></span></div>
     <div class="cases">
 
       <div class="case reveal">
@@ -546,8 +594,29 @@
           <li>Confirmed functionality ahead of implementation</li>
         </ul>
         <div class="stack"><span class="tag">ASP.NET Core</span><span class="tag">C#</span><span class="tag">SQL Server</span><span class="tag">Swagger</span></div>
+        <div class="case-links">
+          <a class="case-link" href="https://github.com/fideliagittesting/TailoringPageAndFashionLife" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View GitHub repo
+          </a>
+        </div>
       </div>
 
+    </div>
+
+    <div class="spec reveal">
+      <div class="spec-head">
+        <span class="spec-id">TC-002.1 — Save Order (Tailoring Management Website)</span>
+        <span class="case-status">✓ PASSED</span>
+      </div>
+      <div class="spec-rows">
+        <div class="spec-row"><div class="spec-label">Objective</div><div class="spec-val">Verify a new tailoring order is accepted and persisted with customer, garment, and measurement details.</div></div>
+        <div class="spec-row"><div class="spec-label">Endpoint</div><div class="spec-val"><code>POST /Tailor/SaveOrder</code></div></div>
+        <div class="spec-row"><div class="spec-label">Request fields</div><div class="spec-val"><code>CustomerName</code>, <code>CustomerEmail</code>, <code>GarmentType</code>, <code>Measurements[]</code> (each with <code>MeasurementType</code>, <code>MeasurementValue</code>, <code>Unit</code>)</div></div>
+        <div class="spec-row"><div class="spec-label">Test data</div><div class="spec-val">Valid customer record with a complete measurement set (chest, waist, length) submitted in metric units</div></div>
+        <div class="spec-row"><div class="spec-label">Expected result</div><div class="spec-val">Order is saved and the app redirects to the order index with the new record visible</div></div>
+        <div class="spec-row"><div class="spec-label">Actual result</div><div class="spec-val">Matched expected — order persisted, redirect confirmed, record verified directly in SQL Server</div></div>
+      </div>
     </div>
   </div>
 </section>
